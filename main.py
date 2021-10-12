@@ -7,6 +7,9 @@ from datetime import datetime
 url = 'https://s3.amazonaws.com/tcmg476/http_access_log'
 filename = 'localcopy.log'
 
+
+#dictionary
+
 Dy = {}
 Wk = {}
 Mon = {}
@@ -33,6 +36,7 @@ for line in AmazonLog:
 
   Dt = datetime.strptime(parts[1], "%d/%b/%Y")
 
+  
   if Dt.day in Dy:
     Dy[Dt.day] += 1
 
@@ -62,7 +66,8 @@ for line in AmazonLog:
 
   else:
     FilesReq[parts[4]] = 1  
-    
+
+
 NotPer = (NotSuccCount/totCount) * 100
 RedPer = (RedCount/totCount) * 100
 MostReqFile = max(FilesReq, key=FilesReq.get)
@@ -74,6 +79,48 @@ print("Total Requests by Week:", Wk, "\n")
 print("Total Requests by Month:",Mon, "\n")
 print("Percentage of Non-Successful Requests:",round(NotPer,2),"%", "\n")
 print("Percentage of Redirected Requests:",round(RedPer, 2), "%", "\n")
-print("Most Requested File(s):" ,MostReqFile, "\n")
-print("Least Requested File(s):" ,LeastReqFile, "\n")
+print("Most Requested File:" ,MostReqFile, "\n")
+print("Least Requested File:" ,LeastReqFile, "\n")
 
+input = (filename, "r")
+outputJan = open("JanuaryLog.txt", "w")
+outputFeb = open("FebuaryLog.txt", "w")
+outputMar = open("MarchLog.txt", "w")
+outputApr = open("AprilLog.txt", "w")
+outputMay = open("MayLog.txt", "w")
+outputJun = open("JuneLog.txt", "w")
+outputJul = open("JulyLog.txt", "w")
+outputAug = open("AugustLog.txt", "w")
+outputSep = open("SeptemberLog.txt", "w")
+outputOct = open("OctoberLog.txt", "w")
+outputNov = open("NovemberLog.txt", "w")
+outputDec = open("DecemberLog.txt", "w")
+
+for line in input:
+  if (Dt.month == "1"): 
+    outputJan.write(line)
+  elif (Dt.month == "2"): 
+    FebuaryLog.write(line)
+  elif (Dt.month == "3"): 
+    MarchLog.write(line)
+  elif (Dt.month == "4"): 
+    AprilLog.write(line)
+  elif (Dt.month == "5"): 
+    MayLog.write(line)
+  elif (Dt.month == "6"): 
+    JuneLog.write(line)
+  elif (Dt.month == "7"): 
+    JulyLog.write(line)
+  elif (Dt.month == "8"): 
+    AugustLog.write(line)
+  elif (Dt.month == "9"): 
+    SeptemberLog.write(line)
+  elif (Dt.month == "10"): 
+    OctoberLog.write(line)
+  elif (Dt.month == "11"): 
+    NovemberLog.write(line)
+  elif (Dt.month == "12"): 
+    DecemberLog.write(line)
+    
+  else:
+    continue
