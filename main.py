@@ -82,6 +82,7 @@ print("Percentage of Redirected Requests:",round(RedPer, 2), "%", "\n")
 print("Most Requested File:" ,MostReqFile, "\n")
 print("Least Requested File:" ,LeastReqFile, "\n")
 
+#Creates month files to write to 
 input = open(filename, "r")
 outputJan = open("JanuaryLog.txt", "w")
 outputFeb = open("FebuaryLog.txt", "w")
@@ -96,6 +97,7 @@ outputOct = open("OctoberLog.txt", "w")
 outputNov = open("NovemberLog.txt", "w")
 outputDec = open("DecemberLog.txt", "w")
 
+#Writes month lines to coordinating file
 for line in input:
   if "/Jan/" in line:
     outputJan.write(line)
@@ -121,7 +123,8 @@ for line in input:
     outputNov.write(line)
   elif "/Dec/" in line:
     outputDec.write(line)
-  
+
+#Closes out all text files  
 input.close()
 outputJan.close()
 outputFeb.close()
