@@ -100,27 +100,27 @@ for line in input:
   if (Dt.month == "1"): 
     outputJan.write(line)
   elif (Dt.month == "2"): 
-    FebuaryLog.write(line)
+    outputFeb.write(line)
   elif (Dt.month == "3"): 
-    MarchLog.write(line)
+    outputMar.write(line)
   elif (Dt.month == "4"): 
-    AprilLog.write(line)
+    outputApr.write(line)
   elif (Dt.month == "5"): 
-    MayLog.write(line)
+    outputMay.write(line)
   elif (Dt.month == "6"): 
-    JuneLog.write(line)
+    outputJun.write(line)
   elif (Dt.month == "7"): 
-    JulyLog.write(line)
+    outputJul.write(line)
   elif (Dt.month == "8"): 
-    AugustLog.write(line)
+    outputAug.write(line)
   elif (Dt.month == "9"): 
-    SeptemberLog.write(line)
+    outputSep.write(line)
   elif (Dt.month == "10"): 
-    OctoberLog.write(line)
+    outputOct.write(line)
   elif (Dt.month == "11"): 
-    NovemberLog.write(line)
+    outputNov.write(line)
   elif (Dt.month == "12"): 
-    DecemberLog.write(line)
+    outputDec.write(line)
     
   else:
     continue
