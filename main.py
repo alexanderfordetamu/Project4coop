@@ -82,7 +82,7 @@ print("Percentage of Redirected Requests:",round(RedPer, 2), "%", "\n")
 print("Most Requested File:" ,MostReqFile, "\n")
 print("Least Requested File:" ,LeastReqFile, "\n")
 
-input = (filename, "r")
+input = open(filename, "r")
 outputJan = open("JanuaryLog.txt", "w")
 outputFeb = open("FebuaryLog.txt", "w")
 outputMar = open("MarchLog.txt", "w")
@@ -97,30 +97,41 @@ outputNov = open("NovemberLog.txt", "w")
 outputDec = open("DecemberLog.txt", "w")
 
 for line in input:
-  if (Dt.month == "1"): 
+  if "/Jan/" in line:
     outputJan.write(line)
-  elif (Dt.month == "2"): 
+  elif "/Feb/" in line: 
     outputFeb.write(line)
-  elif (Dt.month == "3"): 
+  elif "/Mar/" in line: 
     outputMar.write(line)
-  elif (Dt.month == "4"): 
+  elif "/Apr/" in line:
     outputApr.write(line)
-  elif (Dt.month == "5"): 
+  elif "/May/" in line:
     outputMay.write(line)
-  elif (Dt.month == "6"): 
+  elif "/Jun/" in line: 
     outputJun.write(line)
-  elif (Dt.month == "7"): 
+  elif "/Jul/" in line: 
     outputJul.write(line)
-  elif (Dt.month == "8"): 
+  elif "/Aug/" in line: 
     outputAug.write(line)
-  elif (Dt.month == "9"): 
+  elif "/Sep/" in line: 
     outputSep.write(line)
-  elif (Dt.month == "10"): 
+  elif "/Oct/" in line: 
     outputOct.write(line)
-  elif (Dt.month == "11"): 
+  elif "/Nov/" in line:
     outputNov.write(line)
-  elif (Dt.month == "12"): 
+  elif "/Dec/" in line:
     outputDec.write(line)
-    
-  else:
-    continue
+  
+input.close()
+outputJan.close()
+outputFeb.close()
+outputMar.close()
+outputApr.close()
+outputMay.close()
+outputJun.close()
+outputJul.close()
+outputAug.close()
+outputSep.close()
+outputOct.close()
+outputNov.close()
+outputDec.close()
